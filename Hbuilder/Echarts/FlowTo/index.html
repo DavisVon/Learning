@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.map {
+				width: 1400px;
+				height: 800px;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<!--    设置地图容器，需要设置宽高样式-->
+		<div id="main" class="map"></div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/echarts.js"></script>
+	<script src="js/china.js"></script>
+	<script>
+		var myChart = echarts.init(document.getElementById('main'));
+		// 数据格式 地图上标点为citys，value为经纬度，symbolSize为标记点的大小
+		// 数据格式 moveLines，fromName为线条出发城市，toName为线条到达城市，coords为数组经纬度，第一个为出发点经纬度，第二个为到达点经纬度
+		// var allData = //获取页面数组
+		//            $.getJSON("./js/demo.json",function (data) {
+		// 			alert(data.moveLines);
+		// 		});
+
+		var option;
+		var ROOT_PATH = 'http://127.0.0.1:8848/FlowTo';
+		$.get(ROOT_PATH + '/js/data2.json', function(data) {
+
+			// alert(data.moveLines);
+			myChart.setOption(option = {
+				backgroundColor: '#404a59', // 地图背景颜色
+				title: {
+					text: '迁徙图', // 地图标题设置
+					subtext: "123321", // 地图小标题设置
+					sublink: "http://www.baidu.com", //小标题链接
+					target: "blank", //'self' 当前窗口打开，'blank' 新窗口打开
+					padding: 5, // 标题内边距 5  [5, 10]  [5,10,5,10]
+					left: "center", // 组件离容器左侧的距离,'left', 'center', 'right','20%'
+					top: "5%", // 组件离容器上侧的距离,'top', 'middle', 'bottom','20%'
+					right: "auto", // 组件离容器右侧的距离,'20%'
+					bottom: "auto", // 组件离容器下侧的距离,'20%'
+					textStyle: {
+						color: "#fff", //文字颜色
+						fontStyle: "normal", // italic斜体  oblique倾斜
+						fontWeight: "normal", // 文字粗细bold   bolder   lighter  100 | 200 | 300 | 400...
+						fontFamily: "sans-serif", // 字体系列
+						fontSize: 18, // 字体大小
+					}
+				},
+				legend: { // 右下角图例
+					show: false, // 是否显示
+					orient: 'vertical', // 图例排列方向
+					top: 'bottom', // 位置
+					left: 'right', // 位置
+					data: ['地点', '线路'], // 数据
+					textStyle: { // 文字设置
+						color: '#fff'
+					}
+				},
+				geo: {
+					show: true, // 是否显示
+					map: 'china', // 地图类型。world世界地图，china中国地图
+					// center:[115.97, 29.71], //当前视角的中心点，用经纬度表示
+					label: {
+						normal: { //普通状态下的标签文本样式。(省份名称)
+							show: false, //是否在普通状态下显示标签。
+							textStyle: { // 文字设置
+								color: '#fff'
+							},
+						},
+						emphasis: { // 是否在高亮状态下显示标签。(省份名称)
+							show: true,
+							textStyle: { // 文字设置
+								color: '#fff'
+							},
+						}
+					},
+					roam: true, // 是否开启鼠标缩放和平移漫游。默认不开启。如果只想要开启缩放或者平移，可以设置成 'scale' 或者 'move'。设置成 true 为都开启
+					itemStyle: { // 地图板块区域的多边形 图形样式
+						normal: { // 默认板块信息
+							areaColor: '#222',
+							borderColor: '#404a59'
+						},
+						emphasis: { // 高亮版板块信息
+							areaColor: '#2a333d'
+						}
+					}
+				},
+				series: [{
+					name: '地点',
+					type: 'effectScatter', // 特效散点图
+					coordinateSystem: 'geo', // 'cartesian2d'使用二维的直角坐标系。'geo'使用地理坐标系
+					zlevel: 2, // 所有图形的 zlevel 值。
+					rippleEffect: { //涟漪特效相关配置。
+						brushType: 'stroke', //波纹的绘制方式，可选 'stroke' 和 'fill'。
+						period: 4, // 动画的时间。
+						scale: 2.5, // 动画中波纹的最大缩放比例。
+					},
+					label: {
+						normal: {
+							show: false, //是否显示标签。
+							position: "inside", //标签的位置。// 绝对的像素值[10, 10],// 相对的百分比['50%', '50%'].'top','left','right','bottom','inside','insideLeft','insideRight','insideTop','insideBottom','insideTopLeft','insideBottomLeft','insideTopRight','insideBottomRight'
+							offset: [30, 40], //是否对文字进行偏移。默认不偏移。例如：[30, 40] 表示文字在横向上偏移 30，纵向上偏移 40。
+							formatter: '{b}: {c}', //标签内容格式器。模板变量有 {a}、{b}、{c}，分别表示系列名，数据名，数据值。
+						},
+						emphasis: {
+							show: true,
+							position: 'right',
+							formatter: '{b}'
+						}
+					},
+					symbolSize: 2, // 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，例如 [20, 10] 表示标记宽为20，高为10。
+					showEffectOn: 'render', // 配置何时显示特效。可选：'render' 绘制完成后显示特效。'emphasis' 高亮（hover）的时候显示特效。
+					itemStyle: { // 图形样式，normal 是图形在默认状态下的样式；emphasis 是图形在高亮状态下的样式，比如在鼠标悬浮或者图例联动高亮时。
+						normal: {
+							color: '#46bee9'
+						}
+					},
+					data: data.citys
+				}, {
+					name: '线路',
+					type: 'lines',
+					coordinateSystem: 'geo', // 'cartesian2d'使用二维的直角坐标系。'geo'使用地理坐标系
+					zlevel: 2,
+					large: true, // 是否开启大规模散点图的优化，在数据图形特别多的时候（>=5k）可以开启。开启后配合 largeThreshold 在数据量大于指定阈值的时候对绘制进行优化。缺点：优化后不能自定义设置单个数据项的样式。
+					effect: {
+						show: true,
+						constantSpeed: 30, // 点移动的速度
+						symbol: 'pin', // 图形 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'
+						symbolSize: 3, // 标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，例如 [20, 10] 表示标记宽为20，高为10。
+						trailLength: 0, // 线的宽度
+					},
+					lineStyle: { // 线的颜色、宽度，样式设置
+						normal: {
+							color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+								offset: 0,
+								color: '#58B3CC'
+							}, {
+								offset: 1,
+								color: '#F58158'
+							}], false),
+							width: 1, // 线的宽度
+							opacity: 0.2, // 线的透明度
+							curveness: 0.1 // 线的完全程度
+						}
+					},
+					data: data.moveLines
+				}]
+			});
+		});
+
+		option && myChart.setOption(option);
+		// myChart.setOption(option);
+	</script>
+</html>
