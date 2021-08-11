@@ -32,8 +32,8 @@
         <calculation class='tableau' formula='200' />
         <range granularity='50' max='200' min='50' />
       </column>
-      <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202107&quot;'>
-        <calculation class='tableau' formula='&quot;202107&quot;' />
+      <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202106&quot;'>
+        <calculation class='tableau' formula='&quot;202106&quot;' />
         <members>
           <member value='&quot;202105&quot;' />
           <member value='&quot;202106&quot;' />
@@ -2823,8 +2823,8 @@
           <calculation class='tableau' formula='200' />
           <range granularity='50' max='200' min='50' />
         </column>
-        <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202107&quot;'>
-          <calculation class='tableau' formula='&quot;202107&quot;' />
+        <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202106&quot;'>
+          <calculation class='tableau' formula='&quot;202106&quot;' />
         </column>
       </datasource-dependencies>
       <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
@@ -3117,8 +3117,8 @@
             <datasource caption='参数' name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
-            <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202107&quot;'>
-              <calculation class='tableau' formula='&quot;202107&quot;' />
+            <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202106&quot;'>
+              <calculation class='tableau' formula='&quot;202106&quot;' />
             </column>
           </datasource-dependencies>
           <datasource-dependencies datasource='示例 - 超市'>
@@ -3201,8 +3201,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='26' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='25' param='vert' w='99034' x='483' y='929'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='28' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='27' param='vert' w='99034' x='483' y='929'>
                 <zone fixed-size='280' h='98142' id='3' is-fixed='true' name='工作表 1' show-title='false' w='24725' x='488' y='929'>
                   <layout-cache minheight='100' type-h='scalable' type-w='fixed' />
                   <zone-style>
@@ -3271,8 +3271,8 @@
         <datasource caption='参数' name='Parameters' />
       </datasources>
       <datasource-dependencies datasource='Parameters'>
-        <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202107&quot;'>
-          <calculation class='tableau' formula='&quot;202107&quot;' />
+        <column caption='stmonth' datatype='string' name='[参数 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;202106&quot;'>
+          <calculation class='tableau' formula='&quot;202106&quot;' />
           <members>
             <member value='&quot;202105&quot;' />
             <member value='&quot;202106&quot;' />
@@ -3316,8 +3316,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='15' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='14' param='vert' w='99034' x='483' y='929'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='17' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='16' param='vert' w='99034' x='483' y='929'>
                 <zone _.fcp.SetMembershipControl.false...type='web' _.fcp.SetMembershipControl.true...type-v2='web' fixed-size='280' forceUpdate='' h='98142' id='3' is-fixed='true' param='http://127.0.0.1:8848/test1/index.html?stat_mo=&lt;[Parameters].[参数 1]&gt;' w='89378' x='483' y='929'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3374,8 +3374,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='6' w='100000' x='0' y='0'>
-              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='5' param='vert' w='99034' x='483' y='929'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='8' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98142' id='7' param='vert' w='99034' x='483' y='929'>
                 <zone _.fcp.SetMembershipControl.false...type='web' _.fcp.SetMembershipControl.true...type-v2='web' fixed-size='280' forceUpdate='' h='98142' id='3' is-fixed='true' param='http://127.0.0.1:8848/FlowTo/index.html' w='99034' x='483' y='929'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -3553,12 +3553,12 @@
       </viewpoint>
       <simple-id uuid='{5B87DAF0-312F-4786-9E41-50DEBB76F5EB}' />
     </window>
-    <window class='dashboard' name='仪表板 2'>
+    <window class='dashboard' maximized='true' name='仪表板 2'>
       <viewpoints />
-      <active id='11' />
+      <active id='3' />
       <simple-id uuid='{EF9EC303-5DFC-42C1-9772-0BD39F2E0B75}' />
     </window>
-    <window class='dashboard' maximized='true' name='仪表板 3'>
+    <window class='dashboard' name='仪表板 3'>
       <viewpoints />
       <active id='3' />
       <simple-id uuid='{017FC6B6-0DC6-4CD1-80FD-8428BA4AD92F}' />

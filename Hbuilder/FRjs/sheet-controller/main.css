@@ -1,0 +1,91 @@
+/*目录组件容器样式*/
+.hg-sheet-ctrl-wrap{
+    position: absolute;
+    height: 100%;
+    z-index: 9999;
+}
+/*浮标按钮的基本样式*/
+.hg-guidepost{
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 60px;
+    float: left;
+    background: url(list.png) no-repeat;
+    background-color: #ccc;
+    background-size: 70% 80%;
+    background-position: 3px;
+}
+/*侧边栏热点区*/
+.hg-side-hotspot{
+    height: 100%;
+    width: 5px;
+    float: left;
+}
+/*sheet目录的基本样式*/
+.hg-list{
+    overflow-y: auto;
+    width: 500px;
+    background: #f6f6f6;
+    height: 100%;
+    z-index: 9999;
+    cursor: pointer;
+}
+/*list的卡片阴影*/
+.hg-card{
+    -webkit-box-shadow: 0 10px 30px 0 rgba(2, 17, 40, 0.36);
+    -moz-box-shadow: 0 10px 30px 0 rgba(2, 17, 40, 0.36);
+    box-shadow: 0 10px 30px 0 rgba(2, 17, 40, 0.36);
+}
+/*sheet项的基本样式*/
+.hg-list-item{
+    padding-left: 20px;
+    color: #666;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 微软雅黑;
+	list-style-type:none;
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+/*鼠标选中sheet的前背景色*/
+.hg-list-item:hover{
+    background: #ccd7d9;
+    color: #0f4560;
+	height:20px;
+}
+/*激活sheet的前背景色*/
+.hg-list-item.hg-active{
+    background: #dae6e8;
+    color: #0e5f87;
+	height:20px;
+}
+
+/*目录的字体总共分5级适应，以免自动计算的适应出现不协调*/
+.hg-font-lv5{
+    height: 20px;
+    line-height: 20px;
+    font-size: 10pt;
+}
+.hg-font-lv4{
+    height: 27px;
+    line-height: 27px;
+    font-size: 16px;
+}
+.hg-font-lv3{
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+}
+.hg-font-lv2{
+    height: 21px;
+    line-height: 21px;
+    font-size: 12px;
+}
+.hg-font-lv1{
+    height: 18px;
+    line-height: 18px;
+    font-size: 10px;
+}
+
